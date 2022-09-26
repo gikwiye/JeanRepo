@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="C:\Users\JEAN\MonBureau\ephec2021-2022\TFE\ProjetMyCineBel - CopieV3 -swagger\MyCineBel.API\obj\Release\net5.0\win-x86\PubTmp\Out\" />
-  <dbfullsql path="C:\Users\JEAN\MonBureau\ephec2021-2022\TFE\ProjetMyCineBel - CopieV3 -swagger\MyCineBel.API\obj\Release\net5.0\win-x86\PubTmp\EFSQLScripts\MyCineBel.API.DAL.ProjetMyCinebelContext.sql" />
-</sitemanifest>

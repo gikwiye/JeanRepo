@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="MyCineBelClient" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\JEAN\\MonBureau\\ephec2021-2022\\TFE\\ProjetMyCineBel\ -\ CopieV3\ -swagger\\MyCineBel\.Client\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
