@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACfdQkKpGvUGsgmTUpg8AkgAAAAACAAAAAAAQZgAAAAEAACAAAAAqFFZ0qdyLjOLnbfaOYpzzBroG7LeDpZwYtRQrpTf//AAAAAAOgAAAAAIAACAAAABGSxMQ16FN7EwVFNqCMYwk3+gnXVuMKM+TAFw0VxxF0YAAAAAdS6wokJdyIUPMsuG52Ro4R4BCbL1wGmkfeuveFVgiq85wHD33Wtgu7PgA3XRs9bsays3nRyIFqqmBAQ8FxQj7IiibYshFvFfKjxZQgwPXN5zSCcGjrTFGTQNRk1fDwxn9wnnoHhOoEJryPWQfLPPXAL+gf2/95CNa0hQJf9fMPUAAAABAOmhU95sX4tuQ3z0+LVBpVyal74AVxMeqS9ZystZ6q2KKzrW6PNDfSekk4TEx+1YxpENULJzS2czY8J/+jGVM</EncryptedPassword>
+    <History>True|2022-09-26T19:49:51.1344744Z;True|2022-09-26T19:44:05.4990407+02:00;True|2022-09-26T19:25:10.0121360+02:00;True|2022-09-26T19:22:13.4028770+02:00;True|2022-09-26T19:17:21.5644925+02:00;True|2022-09-24T22:14:35.3738744+02:00;True|2022-09-24T21:22:58.7699270+02:00;False|2022-09-24T21:06:48.3004459+02:00;False|2022-09-24T20:49:39.6503449+02:00;False|2022-09-24T16:54:48.6014860+02:00;False|2022-09-24T16:46:55.3880181+02:00;False|2022-09-24T16:40:23.7610755+02:00;False|2022-09-24T16:35:50.4928659+02:00;False|2022-09-24T16:23:17.9922330+02:00;False|2022-09-24T16:00:40.6790539+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="MyCineBel.API.DAL.ProjetMyCinebelContext">
+      <Value>Data Source=tcp:mycinebelapidbserver.database.windows.net,1433%3bInitial Catalog=ProjetMycinebel%3bUser Id=jeanmusoni%40mycinebelapidbserver%3bPassword=P%40ssword01</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

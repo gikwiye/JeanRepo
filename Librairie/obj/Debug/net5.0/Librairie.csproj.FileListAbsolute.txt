@@ -1,0 +1,12 @@
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\bin\Debug\net5.0\Librairie.deps.json
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\bin\Debug\net5.0\Librairie.dll
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\bin\Debug\net5.0\ref\Librairie.dll
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\bin\Debug\net5.0\Librairie.pdb
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.csproj.AssemblyReference.cache
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.AssemblyInfoInputs.cache
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.AssemblyInfo.cs
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.csproj.CoreCompileInputs.cache
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.dll
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\ref\Librairie.dll
+C:\Users\JEAN\source\repos\ProjetIntegration2021_2022\ProjetMyCineBel\Librairie\obj\Debug\net5.0\Librairie.pdb
