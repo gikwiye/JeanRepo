@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Acteur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-light">Liste des acteurs</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="text-light">
+    <table class="table text-light">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ACT_Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACT_Prenom)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACT_Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACT_Prenom)
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.ACT_Id">Delete</a>|
+                        <a asp-action="Edit" asp-route-id="@item.ACT_Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model MyCineBel.Client.Models.TarifSeance
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-light">Creer les Tarifs de la seance</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4 text-light">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="TarSea_Prix" class="control-label"></label>
+                <input asp-for="TarSea_Prix" class="form-control" />
+                <span asp-validation-for="TarSea_Prix" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TarSea_TAR_Id" class="control-label"></label>
+                <select asp-for="TarSea_TAR_Id" class="form-control" asp-items="ViewBag.tarif ">
+                    <option value="">-- Select le type de tarif --</option>
+                </select>
+                <span asp-validation-for="TarSea_TAR_Id" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" asp-for="TarSea_Sea_Id" value="@ViewBag.seance" />
+
+            @*<label asp-for="Sea_SAL_Id" class="control-label">Salle</label>
+
+
+
+
+                @*<div class="form-group">
+                    <label asp-for="TarSea_Sea_Id" class="control-label"></label>
+                    <input asp-for="TarSea_Sea_Id" class="form-control" />
+                    <span asp-validation-for="TarSea_Sea_Id" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+
+   
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+

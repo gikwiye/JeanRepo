@@ -1,0 +1,98 @@
+﻿@model MyCineBel.Client.ViewModel.HomePage
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <img src="https://jeanmusoni.blob.core.windows.net/cineimage/logo.JPG"class="img-fluid w-100"  height="50" />
+        <h1 class="display-3 , text-center">MyCineBel</h1>
+    </div>*@
+
+
+<div class="text-center" style="color: rgba(255,255,255,.5)">
+    <h5 class="display-6">Welcome to MyCineBel</h5>
+    <p style="font-size:18px">Un complexe de cinema à taille humaine</p>
+</div>
+
+
+
+<div class="row no-gutters w-100 ">
+    <div class="container row justify-content-sm-center rounded shadow p-2" style="background: rgba(48,49,52,1)">
+
+        <div class="col col-sm-4">
+            @foreach (var item in Model.film)
+            {
+            <div class="row w-100 no-gutters ">
+                @*class="col-sm-4 m-auto"*@
+                <div>
+
+
+                    <div class="w-100">
+                        <a asp-controller="Film" asp-action="Details" asp-route-id="@item.Film_Id" class="d-block w-100">
+                            <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" class="img-fluid w-75" height="100" />
+                        </a>
+                    </div>
+                    <div class="w-100 px-2 text-center text-break">
+                        <a asp-controller="Film" asp-action="Details" asp-route-id="@item.Film_Id" class="a-text">
+                            @Html.DisplayFor(modelItem => item.Film_Titre)
+                        </a>
+                    </div>
+                    <hr />
+
+                </div>
+
+
+            </div>
+            }
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="pl-sm-3 col-sm-10">
+
+
+                <div style="text-decoration:underline; color:brown" >
+                    @Model.news.NEWS_Titre
+                </div>
+
+                <div>
+                    @Model.news.NEWS_Date.ToString("dd/MM/yyyy")
+                </div>
+                <hr />
+                <div>
+                    @Html.Raw(Model.news.NEWS_Text)
+
+                </div>
+                <hr />
+                
+                <div>
+                    @Html.ActionLink("Autres news", "Index", "News")
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

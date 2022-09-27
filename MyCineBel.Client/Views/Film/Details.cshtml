@@ -1,0 +1,89 @@
+﻿@model MyCineBel.Client.Models.Film
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3 class="mt-3">@Html.DisplayFor(model => model.Film_Titre)</h3>
+
+<div class="container-fluid mt-2">
+    <div class="row no-gutters w-100 justify-content-center">
+        <div class="col-sm-6">
+            <div class="row no-gutters w-100 py-2">
+                <div class="col-12">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-4">
+                            <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@Model.Film_Image" class="img-fluid w-100" height="150" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center py-2">
+                    <strong>@Html.DisplayFor(model => model.Film_Titre)</strong>
+                </div>
+                <div class="row w-100 no-gutters align-items-start py-2 border-bottom">
+                    <div class="col-3 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Film_DateSortie)
+                    </div>
+                    <div class="col-9">
+                        @Html.DisplayFor(model => model.Film_DateSortie)
+                    </div>
+                </div>
+                <div class="row w-100 no-gutters align-items-start py-3 border-bottom">
+                    <div class="col-3 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Film_Genre)
+                    </div>
+                    <div class="col-9">
+                        @Html.DisplayFor(model => model.Film_Genre)
+                    </div>
+                </div>
+                <div class="row w-100 no-gutters align-items-start py-3 border-bottom">
+                    <div class="col-3 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Film_duree)
+                    </div>
+                    <div class="col-9">
+                        @Html.DisplayFor(model => model.Film_duree)
+                    </div>
+                </div>
+                <div class="row w-100 no-gutters align-items-start py-3 border-bottom">
+                    <div class="col-3 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Film_Synopsis)
+                    </div>
+                    <div class="col-9">
+                        @Html.DisplayFor(model => model.Film_Synopsis)
+                    </div>
+                </div>
+                <div class="row w-100 no-gutters align-items-start py-3 border-bottom">
+                    <div class="col-3 font-weight-bold">
+                        Realisateur
+                    </div>
+                    <div class="col-9">
+                        @Html.DisplayName(@ViewBag.NameRealisateur)
+                    </div>
+                </div>
+            </div>
+            <div class="row w-100 no-gutters py-2 justify-content-center">
+                <a asp-action="Index" class="rounded-link d-inline-block rounded p-2 shadow bg-dark a-text">Listes des films</a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <dl class="row w-100 no-gutters">
+                <dt class="col-sm-12">
+                    @Html.DisplayNameFor(model => model.Film_BandeAnnonce)
+                </dt>
+                <dd class="col-sm-12">
+                    <video class="w-100" controls>
+
+                        <source src="https://jeanmusoni.blob.core.windows.net/cineimage/@Model.Film_BandeAnnonce" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+  
+</div>
+

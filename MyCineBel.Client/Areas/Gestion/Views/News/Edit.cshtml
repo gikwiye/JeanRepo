@@ -1,0 +1,54 @@
+﻿@model MyCineBel.Client.Models.News
+
+@{
+    ViewData["Title"] = "Edit";
+}
+ <hr />
+<h1 class="text-light">Edit News</h1>
+
+
+<hr />
+<div class="row text-light">
+    <div class="col-md-10">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <input type="hidden" asp-for="NEWS_Id"/>
+
+            <div class="form-group">
+                <label asp-for="NEWS_Titre" class="control-label"></label>
+                <input asp-for="NEWS_Titre" class="form-control" />
+                <span asp-validation-for="NEWS_Titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NEWS_Date" class="control-label"></label>
+                <input asp-for="NEWS_Date" class="form-control" />
+                <span asp-validation-for="NEWS_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NEWS_Text" class="control-label"></label>
+                <textarea  asp-for="NEWS_Text" class="form-control"></textarea>
+                <span asp-validation-for="NEWS_Text" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="NEWS_COM_Id" class="control-label"></label>
+                <input asp-for="NEWS_COM_Id" class="form-control" />
+                <span asp-validation-for="NEWS_COM_Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+    
+<script>
+    CKEDITOR.replace("NEWS_Text");
+</script>
+ }

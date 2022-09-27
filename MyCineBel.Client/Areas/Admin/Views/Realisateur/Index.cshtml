@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Realisateur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<hr />
+
+<h1 class="text-light">les réalisateurs</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-light">
+    <thead>
+        <tr>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.REA_Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REA_Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REA_Nationalite)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.REA_Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REA_Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REA_Nationalite)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.REA_Id">Delete</a>|
+                <a asp-action="Edit" asp-route-id="@item.REA_Id">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MyCineBel.Client.ViewModel.ProcFilmSeance>
+
+@{
+    ViewData["Title"] = "getSeanceByCinemaAndDate";
+
+
+}
+
+<div class="text-center">
+
+    <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@ViewBag.Cinephoto" width="500" height="150" />
+</div>
+
+
+<h1 style="color:brown">@ViewBag.Cinename :  LES SEANCES </h1>
+
+
+
+<table class="table text-light">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.filmTitre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Image)
+            </th>
+            <th>
+                DATE
+            </th>
+            <th>
+                DEBUT SEANCE
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.filmTitre)
+            </td>
+            <td>
+                <p><img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" width="125" height="125" /></p>
+            </td>
+            <td>
+                @item.seance.SEA_Date.ToString("dddd, dd MMMM yyyy")
+            </td>
+            <td>
+                @item.seance.SEA_HeureDebut.ToString("HH:mm")
+            </td>
+
+
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.seance.SEA_Id">Delete</a> |
+                <a asp-action="Edit" asp-route-id="@item.seance.SEA_Id">Edit</a> |
+                <a  asp-area="Gestion" asp-controller="TarifSeance" asp-action="GetTarifBySeance" asp-route-id="@item.seance.SEA_Id">Tarif</a>
+
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>

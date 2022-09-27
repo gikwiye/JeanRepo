@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:brown">Les News</h1>
+
+
+<div class="card bg-dark rounded shadow text-light" >
+    <div class="card-body" >
+
+        @foreach (var item in Model)
+        {
+            <div style="text-decoration:underline; color:brown">
+                @Html.DisplayFor(modelItem => item.NEWS_Titre)
+            </div>
+
+            <div>
+                @Html.DisplayFor(modelItem => item.NEWS_Date)
+            </div>
+            <br />
+            <div>
+                @Html.Raw(item.NEWS_Text)
+
+            </div>
+          
+            <div style="border-bottom:1px solid;border-block-end-color:chartreuse">
+
+            </div>
+
+
+        }
+
+
+
+
+        @*<table class="table table-borderless text-light">
+            <thead>
+                <tr>
+                    <th class="prevent-overflow">
+                        @Html.DisplayNameFor(model => model.NEWS_Titre)
+                    </th>
+                    <th class="prevent-overflow">
+                        @Html.DisplayNameFor(model => model.NEWS_Date)
+                    </th>
+                    <th class="prevent-overflow">
+                        @Html.DisplayNameFor(model => model.NEWS_Text)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NEWS_Titre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NEWS_Date)
+                        </td>
+                        <td>
+                            @Html.Raw(item.NEWS_Text)
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+
+    </div>
+</div>
+
+
+

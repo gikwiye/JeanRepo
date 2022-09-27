@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Film>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h3 style="">NOS FILMS</h3>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 mt-2">
+                <div class="card border-0 rounded shadow bg-dark">
+                    <h6 class="card-title p-2 text-center">
+                        <span style="min-height:2.5rem;" class="d-block">
+                            @Html.DisplayFor(modelItem => item.Film_Titre)
+                        </span>
+                    
+                    </h6>
+                    <div class="card-img-top d-flex m-auto justify-content-center" >
+                        <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" style="height:250px;width:170px" />
+                    </div>
+                    
+
+
+                    @*<div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>*@
+                <ul class="list-group list-group-flush bg-dark text-small">
+                    <li class="list-group-item bg-dark">
+                        <div class="row w-100 no-gutters">
+                            <div class="col-5">
+                                @Html.DisplayNameFor(modelItem => item.Film_Genre)
+                            </div>
+                            <div class="col-7 prevent-overflow" title="@Html.DisplayFor(modelItem => item.Film_Genre)">
+                                @Html.DisplayFor(modelItem => item.Film_Genre)
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <div class="row w-100 no-gutters">
+                            <div class="col-5">
+                                @Html.DisplayNameFor(modelItem => item.Film_duree)
+                            </div>
+                            <div class="col-7 prevent-overflow">
+                                @Html.DisplayFor(modelItem => item.Film_duree)
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <div class="row w-100 no-gutters">
+                            <div class="col-5">
+                                @Html.DisplayNameFor(modelItem => item.Film_DateSortie)
+                            </div>
+                            <div class="col-7 prevent-overflow">
+                                @Html.DisplayFor(modelItem => item.Film_DateSortie)
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-dark text-center">
+                        <a asp-action="Details" class="card-link a-text" asp-route-id="@item.Film_Id">
+                            View Details
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+         }
+        </div>
+
+
+

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\mycinebelApi</_PublishTargetUrl>
+    <History>True|2022-09-24T19:32:14.3490081Z;True|2022-09-24T14:23:32.6241358+02:00;False|2022-09-24T14:18:52.7327816+02:00;False|2022-09-24T14:15:09.7081151+02:00;True|2022-09-24T11:13:28.1150670+02:00;True|2022-09-13T21:52:54.5908973+02:00;</History>
+  </PropertyGroup>
+</Project>

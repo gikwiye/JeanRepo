@@ -1,0 +1,102 @@
+﻿@model IEnumerable<MyCineBel.Client.ViewModel.ProcFilmSeance>
+
+@{
+    ViewData["Title"] = "getSeanceByCinemaAndDate";
+   
+}
+
+<div class="text-center">
+
+    <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@ViewBag.Cinephoto" width="500" height="200" />
+</div>
+
+
+<h1 class="text-center" style="color:#dc3545">@ViewBag.Cinename :  LES SEANCES</h1>
+<br />
+
+@if (!User.Identity.IsAuthenticated)
+{
+
+    <div class="text-center">
+       
+        <p style="font-size:20px">Veuillez vous loguer pour réserver une seance</p>
+    </div>
+
+}
+
+@*<div class="row w-100 no-gutters flex-row-reverse flex-sm-row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-8">
+        <div class="w-100">
+            <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" width="125" height="125" />
+        </div>
+    </div>
+</div>*@
+
+
+<table class="table table-borderless text-light">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.filmTitre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Image)
+            </th>
+            <th>
+                DATE
+            </th>
+            <th>
+                DEBUT SEANCE
+            </th>
+            <th>
+                PLACE RESTANTE
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.filmTitre)
+            </td>
+            <td>
+                <p><img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" width="125" height="125" /></p>
+            </td>
+            <td>
+                @item.seance.SEA_Date.ToString("dddd, dd MMMM yyyy")
+            </td>
+            <td>
+                @item.seance.SEA_HeureDebut.ToString("HH:mm")
+            </td>
+            <td>
+                @item.seance.Sea_MaxPlace
+            </td>
+
+
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <td>
+                    <button class="btn-outline-primary">
+                        <a asp-controller="Ticket" asp-action="Create" asp-route-idSeance="@item.seance.SEA_Id"
+                           asp-route-cineName="@item.CIN_Name" asp-route-filmTitre="@item.filmTitre"
+                           asp-route-filmImage="@item.Film_Image" asp-route-placeMax="@item.seance.Sea_MaxPlace">RESERVER</a>
+                    </button>
+
+                </td>
+
+            }
+
+
+        </tr>
+        }
+    </tbody>
+</table>

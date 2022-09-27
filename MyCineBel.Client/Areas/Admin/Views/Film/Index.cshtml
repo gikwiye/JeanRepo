@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Film>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<hr />
+<h1 class="text-light">Liste des films</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-light">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_duree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_BandeAnnonce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_DateSortie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Synopsis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Image)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film_Titre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film_Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film_duree)
+                </td>
+                <td>
+                    <video width="220" height="140" controls>
+
+                        <source src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_BandeAnnonce" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film_DateSortie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film_Synopsis)
+                </td>
+                <td>
+                   <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.Film_Image" width="100" height="150" />
+                </td>
+               
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Film_Id">Delete</a>|
+                    <a asp-action="Edit" asp-route-id="@item.Film_Id">Edit</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+
+    $("#image").append(function () {
+        display(this);
+    });
+</script>
+
+

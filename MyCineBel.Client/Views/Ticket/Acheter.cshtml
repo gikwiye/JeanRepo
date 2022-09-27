@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<htlm>
+    <head>
+        <meta name="viewport" content="wdth=device-width" />
+    </head>
+
+    <body>
+     
+        <div class="card font-weight-bold bg-primary mb-3" style="max-width:40rem; max-height:300px;top:50px">
+            <div class="card-header; text-center" style="color:red">POUR LE PAIEMENT</div>
+            <hr />
+            <dl class="row">
+
+                <dt class="col-sm-3">
+                    CINEMA :
+                </dt>
+                <dd class="col-sm-9">
+                    @ViewBag.cinema
+                </dd>
+
+                <dt class="col-sm-3">
+                    FILM:
+                </dt>
+                <dd class="col-sm-9">
+                    @ViewBag.film
+                </dd>
+
+                <dt class="col-sm-3">
+                    SEANCE :
+                </dt>
+                <dd class="col-sm-9">
+                    @ViewBag.numero
+                </dd>
+
+                <dt class="col-sm-3">
+                    Nbre DE PLACE :
+                </dt>
+                <dd class="col-sm-9">
+                    @ViewBag.cart.nbrDeplaDemande
+                </dd>
+                <dt class="col-sm-3">
+                    Prix total
+                </dt>
+                <dd class="col-sm-9">
+                    @ViewBag.total
+                </dd>
+            </dl>
+            <br />
+            <a asp-controller="Checkout" asp-action="index" class="text-center">GO TO CHECKOUT</a>
+        </div>
+
+    </body>
+

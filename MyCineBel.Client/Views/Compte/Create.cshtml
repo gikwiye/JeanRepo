@@ -1,0 +1,43 @@
+﻿@model MyCineBel.Client.Models.Compte
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<h1>Votre compte</h1>
+<hr />
+<h2> @ViewBag.email </h2>
+<hr />
+<p style="font-size:25px">Créer un compte pour pouvoir réserver</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="COM_Nom" class="control-label"></label>
+                <input asp-for="COM_Nom" class="form-control" />
+                <span asp-validation-for="COM_Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="COM_Prenom" class="control-label"></label>
+                <input asp-for="COM_Prenom" class="form-control" />
+                <span asp-validation-for="COM_Prenom" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to home</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

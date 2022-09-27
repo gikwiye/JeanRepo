@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Cinema>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<hr />
+
+<h1 class="text-light" >Liste des cinémas</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-light">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CIN_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIN_Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIN_Ville)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIN_Rue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIN_CodePostal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN_Name)
+            </td>
+            <td>
+                <img src="https://jeanmusoni.blob.core.windows.net/cineimage/@item.CIN_Photo" width="150" height="100" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN_Ville)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN_Rue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN_CodePostal)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.CIN_Id">Delete</a>|
+                <a asp-action="Edit" asp-route-id="@item.CIN_Id">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

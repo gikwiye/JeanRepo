@@ -1,0 +1,99 @@
+﻿@model MyCineBel.Client.Models.Film
+
+@{
+    ViewData["Title"] = "create";
+}
+<hr />
+<h1 class="text-light">Creer un nouveau film</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4 text-light">
+        <form asp-action="create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Film_Titre" class="control-label"></label>
+                <input asp-for="Film_Titre" class="form-control" />
+                <span asp-validation-for="Film_Titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_Genre" class="control-label"></label>
+                <input asp-for="Film_Genre" class="form-control" />
+                <span asp-validation-for="Film_Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_duree" class="control-label"></label>
+                <input asp-for="Film_duree" class="form-control" />
+                <span asp-validation-for="Film_duree" class="text-danger"></span>
+            </div>
+
+            <!--<div class="form-group">
+                <label asp-for="Film_BandeAnnonce" class="control-label"></label>
+                <input asp-for="BandeAnnonceUpload" class="form-control" />-->
+                @*<img src="" id="bandepreview" class="pt-2" alt="" />*@
+            <!--<video  width="320" height="240" controls>
+
+                <source src="" id="bandepreview" type="video/mp4">
+            </video>
+                <span asp-validation-for="BandeAnnonceUpload" class="text-danger"></span>
+            </div>-->
+            <div class="form-group">
+                <label asp-for="Film_BandeAnnonce" class="control-label"></label>
+                <input asp-for="BandeAnnonceUpload" class="form-control" />
+                @*<img src="" id="bandepreview" class="pt-2" alt="" />*@
+                <video src="" id="bandepreview" width="320" height="240" type="video/mp4" controls></video>
+                <span asp-validation-for="BandeAnnonceUpload" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_DateSortie" class="control-label"></label>
+                <input asp-for="Film_DateSortie" class="form-control" />
+                <span asp-validation-for="Film_DateSortie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_Synopsis" class="control-label"></label>
+                <input asp-for="Film_Synopsis" class="form-control" />
+                <span asp-validation-for="Film_Synopsis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_Image" class="control-label"></label>
+                <input asp-for="ImageUpload" class="form-control" />
+                <img src="" id="imgpreview" class="pt-2" alt="" />
+                <span asp-validation-for="ImageUpload" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film_Rea_Id" class="control-label"></label>
+                <input asp-for="Film_Rea_Id" class="form-control" />
+                <span asp-validation-for="Film_Rea_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        $("#ImageUpload").change(function () {
+            readURL(this);
+        });
+
+    </script>
+
+   <script>
+       $("#BandeAnnonceUpload").change(function () {
+           readURLbis(this);
+       });
+   </script>
+
+}
+

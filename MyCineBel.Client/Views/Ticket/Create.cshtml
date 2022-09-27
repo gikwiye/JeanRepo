@@ -1,0 +1,73 @@
+﻿@model MyCineBel.Client.ViewModel.ReservationModel
+
+@{
+    ViewData["Title"] = "Create";
+
+    var tarifType = (Dictionary<decimal, string>)ViewBag.tarif;
+
+}
+
+<h1>Reservation</h1>
+
+<hr />
+<div>
+    <p>@TempData["cineName"]</p>
+    <hr />
+    <p>@TempData["filmTitre"]</p>
+    <hr />
+    <p><img src="https://jeanmusoni.blob.core.windows.net/cineimage/>@TempData["filmImage"]" width="100" height="150" /></p>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Com_Id" />
+            <input  asp-for="Cin_Name" value="@TempData["cineName"]" style="display:none; visibility:hidden"/>
+            <input  asp-for="Film_titre" value="@TempData["filmTitre"]" style="display:none; visibility:hidden" />
+
+
+
+
+            <div class="form-group">
+                <label asp-for="TarSea_Prix" class="control-label">Tarif</label>
+
+                <select asp-for="TarSea_Prix" class="form-control">
+                    @foreach (var item in tarifType)
+                    {
+
+                        <option value="@item.Key"> @item.Value: @item.Key</option>
+
+                    }
+
+                </select>
+                <span asp-validation-for="TarSea_Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="nbrDeplaDemande" class="control-label">nombre de place</label>
+                <input asp-for="nbrDeplaDemande" class="form-control" />
+                <span asp-validation-for="nbrDeplaDemande" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+

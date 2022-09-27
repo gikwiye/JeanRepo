@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.TarifSeance>
+
+@{
+    ViewData["Title"] = "GetTarifBySeance";
+    
+}
+
+<h1 class="text-light">Les tarifs de la seance</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@ViewBag.seance">Create New</a>
+</p>
+<table class="table text-light">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.tarif.TAR_Libelle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TarSea_Prix)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TarSea_Sea_Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.tarif.TAR_Libelle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TarSea_Prix)
+            </td>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.TarSea_Sea_Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<MyCineBel.Client.Data.StripeSettings> Stripe
+
+
+@{
+    Layout = "_Layout";
+
+
+}
+
+<div class="text-center">
+    <form asp-action="Processing" asp-controller="Checkout" method="POST">
+        <article>
+            <label>Amount: € @Math.Round(ViewBag.EuroAmount, 2).</label>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="@Stripe.Value.PublishableKey"
+                data-amount="@ViewBag.total"
+                data-name="MyCineBel"
+                data-description="Ticket(s) de cinema"
+                data-currency="eur"
+                data-locale="en"
+                data-zip-code="true"
+                data-content="@ViewBag.cart">
+
+        </script>
+    </form>
+
+
+</div>
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html>
+
+        <head>
+            <meta name="viewport" content="wdth=device-width" />
+        </head>
+
+        <body>
+            <h3>Checkout Page </h3>
+            <table cellpadding="2" cellspacing="2" border="1">
+                <tr>
+                    <th>Montant total à payer</th>
+                </tr>
+                <tr>
+                    <td>
+                        @ViewBag.total
+                    </td>
+
+                </tr>
+            </table>
+        </body>
+
+    </html>*@

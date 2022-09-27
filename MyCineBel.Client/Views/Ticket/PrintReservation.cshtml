@@ -1,0 +1,50 @@
+﻿@model MyCineBel.Client.ViewModel.ProcSelectMyReservation
+
+@{
+    ViewData["Title"] = "PrintReservation";
+}
+
+<h1>Mon Ticket</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+      
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cinema)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cinema)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Film)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Film)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.salle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.salle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.prix)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prix)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateSeance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateSeance)
+        </dd>
+    </dl>
+</div>
+<div>
+  
+    <a asp-action="GetReservation">Back to List</a>
+</div>

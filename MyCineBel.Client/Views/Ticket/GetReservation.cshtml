@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MyCineBel.Client.ViewModel.ProcSelectMyReservation>
+
+@{
+    ViewData["Title"] = "GetReservation";
+}
+
+
+<h3 style="">Mes reservations</h3>
+
+<div class="card bg-dark rounded shadow text-light">
+    <div class="card-body">
+        <table class="table table-borderless text-light">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cinema)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Film)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.salle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.prix)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateSeance)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cinema)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Film)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.salle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.prix)
+                        </td>
+                        <td>
+                            @item.DateSeance.ToString("dddd, dd MMMM yyyy HH:mm")
+                        </td>
+                        <td>
+                            <a asp-action="Delete" class="a-text" asp-route-id="@item.TicketId">Delete</a>  |
+
+                            <a asp-action="PrintMaReservation" class="a-text" asp-route-id="@item.TicketId">Print</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

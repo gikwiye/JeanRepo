@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MyCineBel.Client.Models.Film>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_duree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_BandeAnnonce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_DateSortie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Synopsis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film_Rea_Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_duree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_BandeAnnonce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_DateSortie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Synopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film_Rea_Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

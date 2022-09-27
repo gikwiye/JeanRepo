@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @*<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] MyCineBel.Client</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/MonCss.css" />*@
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyCineBel.Client</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-color: rgba(32,33,36,1);">
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow" style="background: hsl(210deg 10% 23%);">
+            <div class="row no-gutters w-100 px-3">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyCineBel</a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item ml-1">
+                            <a class="nav-link" asp-controller="Film" asp-action="Index">FILMS</a>
+                        </li>
+
+                        <li class="nav-item ml-1">
+                            <a class="nav-link" asp-controller="Cinema" asp-action="Index">CINEMAS</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <li class="nav-item ml-1">
+                                <a class="nav-link" asp-controller="Compte" asp-action="MonCompte">MON COMPTE</a>
+                            </li>
+
+                            <li class="nav-item ml-1">
+                                <a class="nav-link" asp-controller="Ticket" asp-action="GetReservation">MES RESERVATIONS</a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Admin") && User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ml-1">
+                                <a asp-area="Admin" asp-controller="AdminHome" asp-action="Index" class="btn btn-success">Admin Area</a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Gestion") && User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ml-1">
+                                <a asp-area="Gestion" asp-controller="GestionHome" asp-action="Index" class="btn btn-success">Gestion Area</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+
+                            <li><a id="qsLogoutBtn" asp-controller="Account" asp-action="Logout" class="btn btn-danger">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li><a id="qsLoginBtn" asp-controller="Account" asp-action="Login" asp-route-url="@ViewData["url"]" class="btn btn-success">Login</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br />
+
+    <div class="text-center" >
+            <h3 class="display-3 , text-center text-light">MyCineBel</h3>
+            <img src="https://jeanmusoni.blob.core.windows.net/cineimage/logo.JPG"style="border-radius:25px" width="600" height="125" />
+         
+        </div>
+    <div class="row no-gutters justify-content-center w-100 px-3" style="min-height: calc(100vh - 61px - 57px);color: rgba(255,255,255,.5)">
+        <main role="main" class="pb-3 col-sm-10 col-lg-8">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted" style="background: hsl(210deg 10% 23%);">
+        <div class="container text-center">
+            &copy; 2022 - MyCineBel.Client - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
